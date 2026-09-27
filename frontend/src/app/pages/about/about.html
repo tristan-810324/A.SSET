@@ -1,1 +1,27 @@
-<p>about works!</p>
+<section class="bg-slate-950 px-6 pb-20 pt-36 text-white sm:px-10 lg:px-20">
+  <div class="mx-auto max-w-6xl">
+    <div class="max-w-3xl">
+      <p class="text-xs font-bold uppercase tracking-[0.22em] text-amber-300">About Project A.SSET</p>
+      <h1 class="mt-4 text-4xl font-black tracking-tight sm:text-6xl">The campus runs better when every asset is accounted for.</h1>
+      <p class="mt-6 text-lg leading-8 text-slate-300">Project A.SSET is an advanced system for school equipment tracking and hardware maintenance at Dr. Yanga's Colleges, Inc. It replaces scattered paperwork with one clear, reliable view of the devices, parts, loans, and repairs that support everyday learning.</p>
+    </div>
+    <div class="mt-14 grid gap-5 md:grid-cols-3">
+      @for (item of features; track item.title) {
+        <article class="rounded-2xl border border-white/10 bg-white/[0.05] p-7">
+          <div class="text-2xl">{{ item.icon }}</div>
+          <h2 class="mt-5 text-xl font-bold">{{ item.title }}</h2>
+          <p class="mt-3 text-sm leading-6 text-slate-400">{{ item.description }}</p>
+        </article>
+      }
+    </div>
+    <div class="mt-16 grid items-center gap-10 lg:grid-cols-2">
+      <img src="/dyci_img/homepage4.jpg" alt="Students using technology on campus" class="h-80 w-full rounded-3xl object-cover">
+      <div>
+        <p class="text-xs font-bold uppercase tracking-[0.2em] text-blue-300">Made for every team</p>
+        <h2 class="mt-3 text-3xl font-black">From checkout to repair history.</h2>
+        <p class="mt-4 leading-7 text-slate-400">Custodians can audit rooms with QR scans, faculty can reserve equipment, technicians can see a complete repair timeline, and administrators can make decisions from accurate reports.</p>
+        <a routerLink="/contact" class="mt-7 inline-flex rounded-xl bg-blue-600 px-6 py-3 text-sm font-bold text-white hover:bg-blue-500">Talk to the team</a>
+      </div>
+    </div>
+  </div>
+</section>

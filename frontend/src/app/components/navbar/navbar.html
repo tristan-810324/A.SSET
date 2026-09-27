@@ -13,16 +13,16 @@
     
     <!-- Navigation Links -->
     <div class="hidden items-center gap-8 text-xs font-bold uppercase tracking-wider text-slate-300 lg:flex">
-      <a href="#" class="text-white hover:text-blue-400 transition-colors">Home</a>
-      <a href="#" class="hover:text-blue-400 transition-colors">System Overview</a>
-      <a href="#" class="hover:text-blue-400 transition-colors">Contact IT Support</a>
+      <a routerLink="/" routerLinkActive="text-white" [routerLinkActiveOptions]="{ exact: true }" class="hover:text-blue-400 transition-colors">Home</a>
+      <a routerLink="/about" routerLinkActive="text-white" class="hover:text-blue-400 transition-colors">About</a>
+      <a routerLink="/contact" routerLinkActive="text-white" class="hover:text-blue-400 transition-colors">Contact</a>
     </div>
 
     <!-- Login Button -->
     <div>
-      <button class="rounded-full bg-linear-to-r from-blue-600 to-blue-500 px-5 py-2.5 text-xs font-extrabold uppercase tracking-wider text-white shadow-lg shadow-blue-600/40 transition-all hover:-translate-y-0.5 hover:from-blue-500 hover:to-blue-400 sm:px-6">
+      <a routerLink="/login" class="rounded-full bg-linear-to-r from-blue-600 to-blue-500 px-5 py-2.5 text-xs font-extrabold uppercase tracking-wider text-white shadow-lg shadow-blue-600/40 transition-all hover:-translate-y-0.5 hover:from-blue-500 hover:to-blue-400 sm:px-6">
         Login Portal
-      </button>
+      </a>
     </div>
 
   </nav>

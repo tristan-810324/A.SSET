@@ -1,1 +1,26 @@
-<p>contact works!</p>
+<section class="bg-slate-950 px-6 pb-20 pt-36 text-white sm:px-10 lg:px-20">
+  <div class="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.8fr_1.2fr]">
+    <div>
+      <p class="text-xs font-bold uppercase tracking-[0.22em] text-amber-300">Contact & support</p>
+      <h1 class="mt-4 text-4xl font-black tracking-tight sm:text-5xl">Let’s keep your campus tech working.</h1>
+      <p class="mt-5 leading-7 text-slate-400">Have a question about equipment, access, a repair, or an inventory record? Send the IT/MIS team a note and we’ll route it to the right person.</p>
+      <div class="mt-10 space-y-6 text-sm">
+        <div><p class="font-bold text-white">IT/MIS Support Desk</p><p class="mt-1 text-slate-400">For system access, tickets, and technical concerns</p></div>
+        <div><p class="font-bold text-white">Campus operations</p><p class="mt-1 text-slate-400">Dr. Yanga's Colleges, Inc.</p></div>
+        <div><p class="font-bold text-white">Support hours</p><p class="mt-1 text-slate-400">Monday–Friday · 8:00 AM–5:00 PM</p></div>
+      </div>
+    </div>
+    <form (ngSubmit)="submitForm()" #contactForm="ngForm" class="rounded-3xl border border-white/10 bg-white/[0.06] p-6 sm:p-9">
+      @if (submitted) {
+        <div class="mb-6 rounded-xl border border-emerald-400/30 bg-emerald-400/10 px-4 py-3 text-sm text-emerald-200">Thanks! Your message has been prepared for the support team.</div>
+      }
+      <div class="grid gap-5 sm:grid-cols-2">
+        <label class="text-sm font-semibold text-slate-200">Your name<input name="name" ngModel required class="mt-2 w-full rounded-xl border border-white/10 bg-slate-900 px-4 py-3 font-normal outline-none focus:border-blue-400" placeholder="Juan Dela Cruz"></label>
+        <label class="text-sm font-semibold text-slate-200">Email address<input name="email" type="email" ngModel required class="mt-2 w-full rounded-xl border border-white/10 bg-slate-900 px-4 py-3 font-normal outline-none focus:border-blue-400" placeholder="you@dyci.edu.ph"></label>
+      </div>
+      <label class="mt-5 block text-sm font-semibold text-slate-200">What can we help with?<select name="topic" ngModel class="mt-2 w-full rounded-xl border border-white/10 bg-slate-900 px-4 py-3 font-normal outline-none focus:border-blue-400"><option>Equipment repair</option><option>System access</option><option>Inventory or checkout</option><option>General question</option></select></label>
+      <label class="mt-5 block text-sm font-semibold text-slate-200">Message<textarea name="message" ngModel required rows="5" class="mt-2 w-full resize-none rounded-xl border border-white/10 bg-slate-900 px-4 py-3 font-normal outline-none focus:border-blue-400" placeholder="Tell us what you need..."></textarea></label>
+      <button type="submit" [disabled]="contactForm.invalid" class="mt-6 rounded-xl bg-blue-600 px-6 py-3 text-sm font-bold text-white transition hover:bg-blue-500 disabled:cursor-not-allowed disabled:opacity-50">Send message</button>
+    </form>
+  </div>
+</section>
