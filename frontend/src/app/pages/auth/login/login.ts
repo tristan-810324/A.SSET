@@ -13,4 +13,8 @@ export class Login {
   protected signIn(): void {
     this.submitted = true;
   }
+
+  protected signInWithGoogle(): void {
+    this.submitted = true;
+  }
 }
