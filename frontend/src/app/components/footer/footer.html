@@ -1,28 +1,88 @@
-<footer class="border-t border-white/10 bg-slate-950 px-6 py-12 text-slate-400 sm:px-10 lg:px-20">
-  <div class="mx-auto grid max-w-6xl gap-10 md:grid-cols-[1.5fr_1fr_1fr]">
-    <div>
+<footer class="relative bg-slate-900 text-slate-300 px-6 py-16 sm:px-10 lg:px-20 overflow-hidden border-t-4 border-blue-600 shadow-2xl">
+  <!-- Decorative Glow Background Effect (Touch of Blue) -->
+  <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="relative mx-auto grid max-w-7xl gap-12 md:grid-cols-[2fr_1fr_1fr_1.5fr]">
+    <!-- Brand Info -->
+    <div class="flex flex-col gap-4">
       <div class="flex items-center gap-3">
-        <img src="/dyci_img/dyci-logo.webp" alt="DYCI logo" class="h-10 w-10 object-contain">
-        <span class="text-lg font-black tracking-[0.18em] text-white">A.SSET</span>
+        <div class="p-2 bg-white/10 rounded-xl backdrop-blur-md border border-white/10 shadow-inner">
+          <img src="/dyci_img/dyci-logo.webp" alt="DYCI logo" class="h-10 w-10 object-contain">
+        </div>
+        <span class="text-xl font-black tracking-[0.2em] text-white">A<span class="text-blue-400">.</span>SSET</span>
       </div>
-      <p class="mt-4 max-w-sm text-sm leading-6">A smarter way to track, maintain, and protect the equipment that keeps DYCI learning spaces moving.</p>
-    </div>
-    <div>
-      <h3 class="text-xs font-bold uppercase tracking-[0.18em] text-white">Explore</h3>
-      <div class="mt-4 flex flex-col gap-3 text-sm">
-        <a routerLink="/" class="transition hover:text-blue-300">Home</a>
-        <a routerLink="/about" class="transition hover:text-blue-300">About Project Asset</a>
-        <a routerLink="/contact" class="transition hover:text-blue-300">Contact support</a>
+      <p class="text-sm leading-relaxed text-slate-400 max-w-sm">
+        A smarter way to track, maintain, and protect the equipment that keeps DYCI learning spaces moving forward with excellence.
+      </p>
+      <div class="flex items-center gap-3 mt-2">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-blue-500/10 text-blue-400 border border-blue-500/20">
+          <span class="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span>
+          System Online
+        </span>
       </div>
     </div>
+
+    <!-- Explore Links -->
     <div>
-      <h3 class="text-xs font-bold uppercase tracking-[0.18em] text-white">Need help?</h3>
-      <p class="mt-4 text-sm leading-6">Reach the IT/MIS team for access concerns, repairs, and equipment assistance.</p>
-      <a routerLink="/contact" class="mt-4 inline-block text-sm font-bold text-blue-300 hover:text-blue-200">Get in touch →</a>
+      <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-white mb-4 relative inline-block">
+        Explore
+        <span class="absolute -bottom-1 left-0 w-6 h-0.5 bg-blue-500 rounded-full"></span>
+      </h3>
+      <ul class="flex flex-col gap-2.5 text-sm">
+        <li>
+          <a href="#home" class="text-slate-400 hover:text-white transition-all duration-200 hover:translate-x-1 inline-block">Home</a>
+        </li>
+        <li>
+          <a href="#about" class="text-slate-400 hover:text-white transition-all duration-200 hover:translate-x-1 inline-block">About Project Asset</a>
+        </li>
+        <li>
+          <a href="#contact" class="text-slate-400 hover:text-white transition-all duration-200 hover:translate-x-1 inline-block">Contact Support</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Quick Links / Resources -->
+    <div>
+      <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-white mb-4 relative inline-block">
+        Quick Links
+        <span class="absolute -bottom-1 left-0 w-6 h-0.5 bg-blue-500 rounded-full"></span>
+      </h3>
+      <ul class="flex flex-col gap-2.5 text-sm">
+        <li>
+          <a href="#faq" class="text-slate-400 hover:text-white transition-all duration-200 hover:translate-x-1 inline-block">FAQs</a>
+        </li>
+        <li>
+          <a href="#guidelines" class="text-slate-400 hover:text-white transition-all duration-200 hover:translate-x-1 inline-block">User Guidelines</a>
+        </li>
+        <li>
+          <a href="#privacy" class="text-slate-400 hover:text-white transition-all duration-200 hover:translate-x-1 inline-block">Privacy Policy</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Need Help Section -->
+    <div class="bg-slate-800/50 p-6 rounded-2xl border border-slate-700/50 backdrop-blur-sm shadow-xl flex flex-col justify-between">
+      <div>
+        <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-white mb-2">Need help?</h3>
+        <p class="text-xs leading-relaxed text-slate-400 mb-4">
+          Reach the IT/MIS team for access concerns, repairs, and equipment assistance.
+        </p>
+      </div>
+      <a href="#contact" class="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-xl text-xs font-semibold bg-blue-600 text-white hover:bg-blue-500 transition-all shadow-lg shadow-blue-600/20 active:scale-[0.98]">
+        Get in touch 
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+        </svg>
+      </a>
     </div>
   </div>
-  <div class="mx-auto mt-10 max-w-6xl border-t border-white/10 pt-6 text-xs sm:flex sm:items-center sm:justify-between">
-    <span>© 2026 Dr. Yanga's Colleges, Inc. · Project A.SSET</span>
-    <span class="mt-2 block sm:mt-0">Built for better campus operations.</span>
+
+  <!-- Bottom Divider & Copyright -->
+  <div class="relative mx-auto mt-12 max-w-7xl border-t border-slate-800 pt-6 text-xs text-slate-500 sm:flex sm:items-center sm:justify-between">
+    <p>© 2026 Dr. Yanga's Colleges, Inc. · Project A.SSET. All rights reserved.</p>
+    <div class="flex items-center gap-6 mt-4 sm:mt-0">
+      <span class="text-slate-400">Built for better campus operations.</span>
+    </div>
   </div>
 </footer>

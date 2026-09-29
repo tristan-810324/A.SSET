@@ -1,44 +1,59 @@
-<!-- Immersive Hero Section -->
-<section class="relative flex min-h-screen w-full items-center overflow-hidden px-6 pb-10 pt-24 sm:px-10 lg:px-20">
+<!-- Immersive & Responsive Hero Section -->
+<section id="home" class="relative flex min-h-svh w-full items-center overflow-hidden px-5 pb-12 pt-28 sm:px-8 lg:px-12">
   
-  <!-- Background Image (Eksaktong pinili mong background, walang binago) -->
+  <!-- Background Image (Pinanatili ang eksaktong background) -->
   <div class="absolute inset-0 z-0">
-    <img src="/dyci_img/homepage7.jpg" alt="DYCI Campus Background" class="w-full h-full object-cover object-center">
-    <div class="absolute inset-0 bg-linear-to-t from-slate-950/90 via-slate-950/50 to-slate-950/30 backdrop-blur-[1px]"></div>
+    <img src="/dyci_img/homepage7.jpg" alt="DYCI Campus Background" class="h-full w-full object-cover object-center scale-105 animate-in fade-in duration-1000">
+    <!-- Mas pinakinis na gradient overlay para mas litaw ang text sa mobile -->
+    <div class="absolute inset-0 bg-linear-to-t from-slate-950/95 via-slate-950/60 to-slate-950/30 backdrop-blur-[2px]"></div>
   </div>
 
-  <!-- Content Container -->
-  <div class="relative z-10 flex max-w-4xl -translate-y-3 flex-col items-start gap-5 sm:-translate-y-5 lg:-translate-y-8">
+  <!-- Content Container (Optimized spacing for Mobile & iPad) -->
+  <div class="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-start gap-4 sm:gap-5 lg:-translate-y-4">
     
-    <!-- Clean Minimalist Badge -->
-    <div class="inline-flex items-center gap-2 rounded-full border border-blue-400/30 bg-blue-500/15 px-3 py-1.5 backdrop-blur-md sm:px-4 sm:py-2">
-      <span class="h-2 w-2 rounded-full bg-amber-400 animate-pulse"></span>
-      <span class="text-[0.6rem] font-bold uppercase tracking-[0.16em] text-blue-200 sm:text-[0.7rem]">Dr. Yanga's Colleges, Inc.</span>
+    <!-- Clean Minimalist Badge (Touch of Gold & Blue) -->
+    <div class="inline-flex items-center gap-2.5 rounded-full border border-blue-400/20 bg-blue-500/10 px-3.5 py-1.5 backdrop-blur-md transition-all hover:bg-blue-500/20 sm:px-4 sm:py-2">
+      <span class="relative flex h-2 w-2">
+        <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-400 opacity-75"></span>
+        <span class="relative inline-flex h-2 w-2 rounded-full bg-amber-500"></span>
+      </span>
+      <span class="text-[0.65rem] font-bold uppercase tracking-[0.18em] text-blue-200 sm:text-[0.7rem]">Dr. Yanga's Colleges, Inc.</span>
     </div>
     
-    <!-- High-End Typography -->
-    <h1 class="text-4xl font-black leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-7xl">
-      Manage Campus Tech <br>
+    <!-- High-End Fluid Typography (Responsive scaling) -->
+    <h1 class="text-4xl font-black leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl">
+      Manage Campus Tech <br class="hidden sm:block">
       <span class="text-transparent bg-clip-text bg-linear-to-r from-amber-300 via-blue-200 to-white">
         Without the Headache.
       </span>
     </h1>
     
     <!-- Clean Readable Text -->
-    <p class="max-w-2xl text-base font-normal leading-relaxed text-slate-300 drop-shadow-sm sm:text-lg">
+    <p class="max-w-2xl text-sm font-normal leading-relaxed text-slate-300 drop-shadow-sm sm:text-base lg:text-lg">
       Project Asset simplifies equipment checkout, spots missing hardware quickly, and streamlines inventory audits across all school buildings—<span class="text-white font-semibold">eliminating manual paperwork.</span>
     </p>
     
-    <!-- Modern Action Buttons -->
-    <div class="mt-4 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:gap-4">
-      <a routerLink="/login" class="flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-7 py-3.5 text-xs font-bold uppercase tracking-wider text-white shadow-xl shadow-blue-600/30 transition-all hover:bg-blue-500 sm:px-8 sm:py-4">
+    <!-- Modern Action Buttons (Full width sa mobile, side-by-side sa iPad/Desktop) -->
+    <div class="mt-6 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:gap-4 lg:mt-8">
+      <a routerLink="/login" class="group flex w-full sm:w-auto items-center justify-center gap-2.5 rounded-xl bg-blue-600 px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-white shadow-xl shadow-blue-600/20 transition-all hover:-translate-y-0.5 hover:bg-blue-500 hover:shadow-blue-500/40 active:translate-y-0 sm:px-8 sm:py-4">
         Access Dashboard
+        <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+        </svg>
       </a>
-      <a routerLink="/contact" class="flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/10 px-7 py-3.5 text-xs font-bold uppercase tracking-wider text-white backdrop-blur-md transition-all hover:bg-white/20 sm:px-8 sm:py-4">
+      
+      <a href="#contact" class="group flex w-full sm:w-auto items-center justify-center gap-2.5 rounded-xl border border-white/10 bg-white/5 px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-white backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-white/10 active:translate-y-0 sm:px-8 sm:py-4">
         Submit Repair Ticket
+        <svg class="h-4 w-4 opacity-70 transition-opacity group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+        </svg>
       </a>
     </div>
 
   </div>
 
 </section>
+
+<!-- Wag kalimutan panatilihin ang mga components mo sa ibaba -->
+<app-about />
+<app-contact />

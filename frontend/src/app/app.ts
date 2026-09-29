@@ -1,5 +1,5 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, inject, signal } from '@angular/core';
+import { Router, RouterOutlet } from '@angular/router';
 import { Navbar } from './components/navbar/navbar';
 import { Footer } from './components/footer/footer';
 
@@ -11,4 +11,5 @@ import { Footer } from './components/footer/footer';
 })
 export class App {
   protected readonly title = signal('frontend');
+  protected readonly router = inject(Router);
 }
