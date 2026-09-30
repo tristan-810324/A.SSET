@@ -1,9 +1,9 @@
-@if (!router.url.startsWith('/login') && !router.url.startsWith('/register') && !router.url.startsWith('/forgot-password')) {
+@if (!router.url.startsWith('/login') && !router.url.startsWith('/register') && !router.url.startsWith('/forgot-password') && !router.url.startsWith('/verify-otp')) {
   <app-navbar />
 }
 <main>
   <router-outlet />
 </main>
-@if (!router.url.startsWith('/login') && !router.url.startsWith('/register') && !router.url.startsWith('/forgot-password')) {
+@if (!router.url.startsWith('/login') && !router.url.startsWith('/register') && !router.url.startsWith('/forgot-password') && !router.url.startsWith('/verify-otp')) {
   <app-footer />
 }
