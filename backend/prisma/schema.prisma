@@ -1,0 +1,59 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
+}
+
+enum Role {
+  FACULTY
+  CUSTODIAN
+  ADMIN
+}
+
+enum AccountStatus {
+  PENDING_PROFILE
+  PENDING_APPROVAL
+  ACTIVE
+  DEACTIVATED
+}
+
+enum OtpType {
+  VERIFY_ACCOUNT
+  RESET_PASSWORD
+}
+
+model User {
+  id           String        @id @default(cuid())
+  email        String        @unique @db.VarChar(254)
+  passwordHash String        @map("password_hash") @db.VarChar(255)
+  role         Role          @default(FACULTY)
+  status       AccountStatus @default(PENDING_PROFILE)
+  isVerified   Boolean       @default(false) @map("is_verified")
+  fullName     String?       @map("full_name") @db.VarChar(150)
+  department   String?       @db.VarChar(120)
+  designation  String?       @db.VarChar(120)
+  createdAt    DateTime      @default(now()) @map("created_at")
+  updatedAt    DateTime      @updatedAt @map("updated_at")
+  otps         Otp[]
+
+  @@index([status])
+  @@map("users")
+}
+
+model Otp {
+  id        String   @id @default(cuid())
+  userId    String   @map("user_id")
+  type      OtpType
+  codeHash  String   @map("code_hash") @db.VarChar(255)
+  expiresAt DateTime @map("expires_at")
+  createdAt DateTime @default(now()) @map("created_at")
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, type])
+  @@index([expiresAt])
+  @@map("otps")
+}

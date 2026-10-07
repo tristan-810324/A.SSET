@@ -1,0 +1,41 @@
+<main class="min-h-screen bg-slate-100 px-6 py-10">
+  <div class="mx-auto max-w-6xl">
+    <header class="flex items-center justify-between">
+      <div>
+        <p class="text-xs font-bold uppercase tracking-widest text-blue-600">Project A.SSET</p>
+        <h1 class="mt-2 text-3xl font-black text-slate-900">User governance</h1>
+        <p class="mt-1 text-sm text-slate-500">Review faculty profiles pending activation.</p>
+      </div>
+      <button type="button" (click)="logout()" class="rounded-full border border-slate-300 px-4 py-2 text-xs font-bold text-slate-700">Sign out</button>
+    </header>
+
+    @if (errorMessage) {
+      <div role="alert" class="mt-6 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800">{{ errorMessage }}</div>
+    }
+
+    <section class="mt-8 overflow-hidden rounded-2xl bg-white shadow">
+      <div class="border-b border-slate-200 px-6 py-4 font-bold text-slate-900">Pending approvals</div>
+      @if (loading) {
+        <p class="p-6 text-sm text-slate-500">Loading users...</p>
+      } @else if (users.length === 0) {
+        <p class="p-6 text-sm text-slate-500">No accounts are waiting for approval.</p>
+      } @else {
+        <div class="divide-y divide-slate-100">
+          @for (user of users; track user.id) {
+            <article class="flex flex-wrap items-center justify-between gap-4 px-6 py-5">
+              <div>
+                <p class="font-bold text-slate-900">{{ user.fullName }}</p>
+                <p class="text-sm text-slate-500">{{ user.email }} · {{ user.department }}</p>
+                <p class="mt-1 text-xs text-slate-400">{{ user.designation }}</p>
+              </div>
+              <div class="flex gap-2">
+                <button type="button" (click)="approve(user)" class="rounded-full bg-emerald-600 px-4 py-2 text-xs font-bold text-white">Activate</button>
+                <button type="button" (click)="deactivate(user)" class="rounded-full border border-red-200 px-4 py-2 text-xs font-bold text-red-700">Deactivate</button>
+              </div>
+            </article>
+          }
+        </div>
+      }
+    </section>
+  </div>
+</main>

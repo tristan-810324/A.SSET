@@ -1,38 +1,38 @@
 <!-- Modern Glassmorphism Navigation -->
-<header class="fixed inset-x-0 top-3 z-50 flex justify-center px-3 transition-all duration-300 sm:top-5 sm:px-6">
-  <nav class="w-full max-w-7xl rounded-2xl border border-white/10 bg-slate-900/80 px-4 py-3 shadow-2xl shadow-blue-950/20 backdrop-blur-xl transition-all duration-300 sm:rounded-full sm:px-8"
+<header class="fixed inset-x-0 top-3 z-50 flex justify-center px-3 transition-all duration-300 sm:top-5 sm:px-4 lg:px-6">
+  <nav class="w-full max-w-7xl rounded-2xl border border-white/10 bg-slate-900/80 px-4 py-3 shadow-2xl shadow-blue-950/20 backdrop-blur-xl transition-all duration-300 sm:px-6 lg:rounded-full lg:px-8"
     [class.py-2]="isScrolled"
     [class.bg-slate-950/90]="isScrolled"
     [class.border-blue-500/30]="isScrolled">
     
-    <div class="flex items-center justify-between gap-3 sm:gap-4">
+    <div class="flex items-center justify-between gap-2 sm:gap-4">
       
       <!-- Logo and Brand Name -->
-      <a href="#home" class="flex min-w-0 items-center gap-2.5 sm:gap-3 group">
+      <a href="#home" class="group flex min-w-0 items-center gap-2.5 sm:gap-3">
         <div class="p-1.5 bg-blue-600/20 rounded-xl border border-blue-400/30 shadow-inner transition-transform group-hover:scale-105">
-          <img src="/dyci_img/dyci-logo.webp" alt="DYCI Logo" class="h-8 w-8 shrink-0 object-contain drop-shadow sm:h-10 sm:w-10">
+          <img src="/dyci_img/dyci-logo.webp" alt="DYCI Logo" class="h-8 w-8 shrink-0 object-contain drop-shadow sm:h-9 sm:w-9 lg:h-10 lg:w-10">
         </div>
         <div class="flex flex-col">
-          <span class="text-base sm:text-xl font-black tracking-[0.15em] sm:tracking-[0.2em] text-white">A<span class="text-blue-400">.</span>SSET</span>
-          <span class="hidden text-[0.55rem] sm:text-[0.6rem] font-bold uppercase tracking-wider text-blue-300/80 sm:block">DYCI Equipment Tracking</span>
+          <span class="text-base font-black tracking-[0.15em] text-white sm:text-lg lg:text-xl lg:tracking-[0.2em]">A<span class="text-blue-400">.</span>SSET</span>
+          <span class="hidden text-[0.6rem] font-bold uppercase tracking-wider text-blue-300/80 md:block">DYCI Equipment Tracking</span>
         </div>
       </a>
       
       <!-- Desktop & Tablet Navigation Links -->
-      <div class="hidden items-center gap-1 bg-white/5 border border-white/10 rounded-full px-3 py-1.5 text-[0.65rem] sm:text-xs font-bold uppercase tracking-[0.12em] sm:tracking-[0.15em] text-slate-300 md:flex">
-        <a href="#home" class="px-3 sm:px-4 py-2 rounded-full transition-all duration-200 hover:text-white hover:bg-blue-600/40">Home</a>
-        <a href="#about" class="px-3 sm:px-4 py-2 rounded-full transition-all duration-200 hover:text-white hover:bg-blue-600/40">About</a>
-        <a href="#contact" class="px-3 sm:px-4 py-2 rounded-full transition-all duration-200 hover:text-white hover:bg-blue-600/40">Contact</a>
+      <div class="hidden items-center gap-1 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.15em] text-slate-300 lg:flex">
+        <a href="#home" class="rounded-full px-4 py-2 transition-all duration-200 hover:bg-blue-600/40 hover:text-white">Home</a>
+        <a href="#about" class="rounded-full px-4 py-2 transition-all duration-200 hover:bg-blue-600/40 hover:text-white">About</a>
+        <a href="#contact" class="rounded-full px-4 py-2 transition-all duration-200 hover:bg-blue-600/40 hover:text-white">Contact</a>
       </div>
 
       <!-- Action Buttons (Login & Mobile/Tablet Menu Toggle) -->
-      <div class="flex items-center gap-2 sm:gap-3">
-        <a routerLink="/login" class="relative group overflow-hidden rounded-full bg-blue-600 px-4 py-2 sm:px-6 sm:py-2.5 text-[0.6rem] sm:text-xs font-extrabold uppercase tracking-[0.12em] sm:tracking-[0.15em] text-white shadow-lg shadow-blue-600/40 transition-all hover:bg-blue-500 hover:shadow-blue-500/50 hover:-translate-y-0.5 active:translate-y-0">
+      <div class="flex shrink-0 items-center gap-2 sm:gap-3">
+        <a routerLink="/login" class="group relative overflow-hidden rounded-full bg-blue-600 px-3 py-2 text-[0.6rem] font-extrabold uppercase tracking-[0.12em] text-white shadow-lg shadow-blue-600/40 transition-all hover:-translate-y-0.5 hover:bg-blue-500 hover:shadow-blue-500/50 active:translate-y-0 sm:px-5 sm:py-2.5 sm:text-xs sm:tracking-[0.15em] lg:px-6">
           <span class="relative z-10">Login Portal</span>
           <div class="absolute inset-0 bg-linear-to-r from-blue-500 to-indigo-500 opacity-0 transition-opacity group-hover:opacity-100"></div>
         </a>
 
-        <button type="button" aria-label="Toggle navigation menu" [attr.aria-expanded]="isMenuOpen" (click)="toggleMenu()" class="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-200 transition hover:border-blue-400/40 hover:bg-blue-600/20 hover:text-white md:hidden">
+        <button type="button" aria-label="Toggle navigation menu" aria-controls="mobile-navigation" [attr.aria-expanded]="isMenuOpen" (click)="toggleMenu()" class="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-200 transition hover:border-blue-400/40 hover:bg-blue-600/20 hover:text-white sm:h-10 sm:w-10 lg:hidden">
           <span class="text-lg font-bold leading-none">{{ isMenuOpen ? '×' : '☰' }}</span>
         </button>
       </div>
@@ -41,10 +41,10 @@
 
     <!-- Mobile & Tablet Dropdown Menu -->
     @if (isMenuOpen) {
-      <div class="mt-3 grid gap-1.5 border-t border-white/10 pt-3 md:hidden animate-in fade-in slide-in-from-top-2">
-        <a href="#home" (click)="toggleMenu()" class="rounded-xl px-4 py-2.5 sm:py-3 text-xs sm:text-sm font-bold text-slate-200 transition-colors hover:bg-blue-600/20 hover:text-white">Home</a>
-        <a href="#about" (click)="toggleMenu()" class="rounded-xl px-4 py-2.5 sm:py-3 text-xs sm:text-sm font-bold text-slate-200 transition-colors hover:bg-blue-600/20 hover:text-white">About</a>
-        <a href="#contact" (click)="toggleMenu()" class="rounded-xl px-4 py-2.5 sm:py-3 text-xs sm:text-sm font-bold text-slate-200 transition-colors hover:bg-blue-600/20 hover:text-white">Contact Support</a>
+      <div id="mobile-navigation" class="mt-3 grid gap-1.5 border-t border-white/10 pt-3 animate-in fade-in slide-in-from-top-2 lg:hidden">
+        <a href="#home" (click)="toggleMenu()" class="rounded-xl px-4 py-2.5 text-sm font-bold text-slate-200 transition-colors hover:bg-blue-600/20 hover:text-white sm:py-3">Home</a>
+        <a href="#about" (click)="toggleMenu()" class="rounded-xl px-4 py-2.5 text-sm font-bold text-slate-200 transition-colors hover:bg-blue-600/20 hover:text-white sm:py-3">About</a>
+        <a href="#contact" (click)="toggleMenu()" class="rounded-xl px-4 py-2.5 text-sm font-bold text-slate-200 transition-colors hover:bg-blue-600/20 hover:text-white sm:py-3">Contact Support</a>
       </div>
     }
   </nav>

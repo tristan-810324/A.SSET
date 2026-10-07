@@ -1,0 +1,43 @@
+<main class="flex min-h-screen items-center justify-center bg-slate-100 px-6 py-12">
+  <form (ngSubmit)="submit()" #profileForm="ngForm" class="w-full max-w-lg rounded-3xl bg-white p-8 shadow-xl">
+    <a routerLink="/" class="text-xs font-bold text-blue-600">← Back to home</a>
+    <h1 class="mt-6 text-3xl font-black text-slate-900">Complete your profile</h1>
+    <p class="mt-2 text-sm text-slate-500">Complete your details to continue to your faculty borrower dashboard.</p>
+
+    @if (errorMessage) {
+      <div role="alert" class="mt-5 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800">
+        {{ errorMessage }}
+      </div>
+    }
+
+    <label class="mt-6 block text-xs font-bold uppercase tracking-wide text-slate-700">
+      Full name
+      <input name="fullName" [(ngModel)]="fullName" required minlength="2"
+        class="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3 text-sm outline-none focus:border-blue-600 focus:ring-4 focus:ring-blue-600/10"
+        placeholder="Complete official name">
+    </label>
+
+    <label class="mt-4 block text-xs font-bold uppercase tracking-wide text-slate-700">
+      Department / Office
+      <select name="department" [(ngModel)]="department" required
+        class="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none focus:border-blue-600">
+        <option value="" disabled>Select department</option>
+        @for (item of departments; track item) { <option [value]="item">{{ item }}</option> }
+      </select>
+    </label>
+
+    <label class="mt-4 block text-xs font-bold uppercase tracking-wide text-slate-700">
+      Designation / Position
+      <select name="designation" [(ngModel)]="designation" required
+        class="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none focus:border-blue-600">
+        <option value="" disabled>Select designation</option>
+        @for (item of designations; track item) { <option [value]="item">{{ item }}</option> }
+      </select>
+    </label>
+
+    <button type="submit" [disabled]="profileForm.invalid || loading"
+      class="mt-7 w-full rounded-full bg-blue-600 px-5 py-3 text-xs font-extrabold uppercase tracking-widest text-white disabled:opacity-50">
+      {{ loading ? 'Saving...' : 'Continue to dashboard' }}
+    </button>
+  </form>
+</main>

@@ -12,4 +12,8 @@ import { Footer } from './components/footer/footer';
 export class App {
   protected readonly title = signal('frontend');
   protected readonly router = inject(Router);
+
+  protected get showPublicShell(): boolean {
+    return !this.router.url.startsWith('/dashboard/');
+  }
 }
